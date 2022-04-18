@@ -2,6 +2,7 @@
     "server": [
         {
             "server_ID": "732496452986732586",
+            "server_name": "黃黃綠綠的閨房",
             "emoji_to_role": [
                 {
                     "msg_ID": "964813713792188416",
@@ -9,46 +10,12 @@
                     "emoji_ID": "AAA",
                     "description": "分配yee"
                 }
-            ],
-            "music": [
-                {
-                    "perfix": "join",
-                    "function": "join"
-                },
-                {
-                    "perfix": "play",
-                    "function": "join"
-                },
-                {
-                    "perfix": "join",
-                    "function": "join"
-                }
             ]
         },
         {
-            "server_ID": "QQQ",
-            "emoji_to_role": [
-                {
-                    "msg_ID": "964813713792188416",
-                    "role_ID": "846065408325976155",
-                    "emoji_ID": "BBB",
-                    "description": "分配yee"
-                }
-            ],
-            "music": [
-                {
-                    "perfix": "join",
-                    "function": "join"
-                },
-                {
-                    "perfix": "play",
-                    "function": "join"
-                },
-                {
-                    "perfix": "join",
-                    "function": "join"
-                }
-            ]
+            "server_ID": "412592317149609984",
+            "server_name": "test",
+            "emoji_to_role": []
         }
     ]
 }
