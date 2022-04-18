@@ -1,0 +1,25 @@
+
+        {
+            "emoji_to_role": [
+                {
+                    "msg_ID": "964813713792188416",
+                    "role_ID": "846065408325976155",
+                    "emoji_ID": "AAA",
+                    "description": "分配yee"
+                }
+            ],
+            "music": [
+                {
+                    "perfix": "join",
+                    "function": "join"
+                },
+                {
+                    "perfix": "play",
+                    "function": "join"
+                },
+                {
+                    "perfix": "join",
+                    "function": "join"
+                }
+            ]
+        }
