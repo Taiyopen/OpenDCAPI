@@ -5,30 +5,22 @@ class jsonAPI { //node.js 的檔案系統，能夠幫助存取、讀取檔案
     //真實用戶ID 必然是隨機生成且不重複的，這邊我先用手動強制規定的方式生成
 
     //寫入以上 json 文件選項
-    static writeJSON(newData) {
-        console.log('test');
+    static writeJSON(data, newData, dataPath) {
         //先將原本的 json 檔讀出來
-        fs.readFile('./openAPI.json', function (err, dataInfo) {
+
+        //將二進制數據轉換為字串符
+        //將傳來的資訊推送到數組對象中
+        data[dataPath].push(newData);
+        //data.total = data.filedata.length;
+        console.log(data.filedata);
+        //因為寫入文件（json）只認識字符串或二進制數，所以需要將json對象轉換成字符串
+        var str = JSON.stringify(data);
+        //將字串符傳入您的 json 文件中
+        fs.writeFile('./openAPI.json', str, function (err) {
             if (err) {
-                return console.error(err);
+                console.error(err);
             }
-            //將二進制數據轉換為字串符
-            var data = dataInfo.toString();
-            //將字符串轉換為 JSON 對象
-            data = JSON.parse(data);
-            //將傳來的資訊推送到數組對象中
-            data.dataInfo.push(newData);
-            data.total = data.dataInfo.length;
-            console.log(data.dataInfo);
-            //因為寫入文件（json）只認識字符串或二進制數，所以需要將json對象轉換成字符串
-            var str = JSON.stringify(data);
-            //將字串符傳入您的 json 文件中
-            fs.writeFile('./openAPI.json', str, function (err) {
-                if (err) {
-                    console.error(err);
-                }
-                console.log('Add new data to dataInfo...')
-            })
+            console.log('Add new data to dataInfo...')
         })
     }
 
@@ -63,14 +55,15 @@ class jsonAPI { //node.js 的檔案系統，能夠幫助存取、讀取檔案
             })
         })
     }
-    
-    static improtJSON(filePath){
+
+    static importJSON(filePath){
         var dataJSON = require(filePath);
         return dataJSON;
     }
 
+
+    
     static searchJSON(data, dataName){
-        //return data.dataName;
         return data[dataName];
     }
 
